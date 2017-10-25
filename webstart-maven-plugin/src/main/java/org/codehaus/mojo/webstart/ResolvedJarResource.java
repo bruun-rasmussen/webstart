@@ -66,6 +66,12 @@ public class ResolvedJarResource
         setHrefValue( jarResource.getHrefValue() );
     }
 
+    public String getJarName()
+    {
+        return String.format( "%s-%s%s.jar",
+                getArtifactId(), getVersion(), getClassifier() == null ? "" : "-" + getClassifier() );
+    }
+
     public String getArtifactId()
     {
         return artifact.getArtifactId();
